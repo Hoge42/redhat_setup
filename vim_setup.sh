@@ -7,7 +7,7 @@ fi
 cd $HOME/.vim
 wget https://github.com/Glench/Vim-Jinja2-Syntax/archive/master.tar.gz
 tar xzf master.tar.gz
-mv Vim-Jinja2-Syntax-master/{ftdetect,indent,syntax} .
+cp -r Vim-Jinja2-Syntax-master/{ftdetect,indent,syntax} .
 rm -rf Vim-Jinja2-Syntax-master
 rm -rf master.tar.gz
 cd $HOME
