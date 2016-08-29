@@ -6,6 +6,8 @@ alias ll='ls -l'
 alias la='ls -la'
 
 export EDITOR="vim"
+export HISTSIZE=50000
+export HISTTIMEFORMAT="%y/%m/%d %T  "
 
 # paste this to ~/.bashrc
 << __COMMENT_OUT__
