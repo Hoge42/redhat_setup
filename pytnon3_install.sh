@@ -1,12 +1,14 @@
 #!/bin/bash
 SCRIPT_NAME=`basename ${0}`
+PYTHON3_LATEST="3.5.2"
 
-while getopts 3meh OPT
+while getopts 3meth OPT
 do
     case $OPT in
         3 ) PYTHON3_FLAG="TRUE";;
         m ) MATLAB_FLAG="TRUE";;
         e ) PYENV="TRUE";;
+        t ) TENSOR_FLOW="TRUE";;
         h ) HELP_FLAG="TRUE";;
     esac
 done
@@ -14,11 +16,26 @@ done
 
 if [ $HELP_FLAG ] || [ $# = 0 ]; then
     cat << __EOD__
-Usage: $SCRIPT_NAME [-3emh] [-v ver]" 
-  -3        Install required packages for Python3
-  -m        Install required packages for matplotlib
-  -e        Install pyenv($HOME/.pyenv)
-  -h        Show this help message
+Usage: $SCRIPT_NAME [-3meth]" 
+  -3	Install required packages for Python3
+  -m	Install required packages for matplotlib
+  -e	Install pyenv($HOME/.pyenv)
+  -t	Install TensorFlow to current env(for Python 3.5, CPU Only)
+  -h	Show this help message
+
+Example:
+  Install required packages
+    # $SCRIPT_NAME -3m
+  Install pyenv
+    $ $SCRIPT_NAME -e
+  Install Python $PYTHON3_LATEST
+    $ pyenv install $PYTHON3_LATEST
+  Create Python virtualenv
+    $ mkdir ~/mypyenv
+    $ cd ~/mypyenv
+    $ virtualenv py352 --python=${HOME}/.pyenv/versions/$PYTHON3_LATEST/bin/python3
+  Install TensorFlow
+    $ $SCRIPT_NAME -t
 __EOD__
     exit
 fi
@@ -52,5 +69,12 @@ Installation of pyenv is complete!
 To install Python3:
 $ source ~/.bashrc
 $ pyenv install [version] 
+$ virtualenv [envname] --python=${HOME}/.pyenv/versions/[version]/bin/python3
 AFTER_MESSAGE
+fi
+
+if [ $TENSOR_FLOW ]; then
+    export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0rc0-cp35-cp35m-linux_x86_64.whl
+    pip3 install --upgrade $TF_BINARY_URL
+	pip3 install Pillow
 fi
