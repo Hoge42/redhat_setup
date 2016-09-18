@@ -46,7 +46,7 @@ if [ $PYENV ]; then
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> /etc/bashrc
 __INSTALL_TO_GLOBAL__
 
-	cat <<AFTER_MESSAGE
+    cat <<AFTER_MESSAGE
 
 Installation of pyenv is complete!
 To install Python3:
