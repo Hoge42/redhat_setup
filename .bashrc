@@ -22,7 +22,7 @@ function superedit() {
         echo "needs target path"
         return false
     fi
-    if [ ! -f "$1.org" ]; then
+    if sudo test ! -e "$1.org"; then
         sudo cp -p -v $1 "$1.org"
     fi
     sudoedit $1
