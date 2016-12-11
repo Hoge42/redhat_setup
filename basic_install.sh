@@ -1,10 +1,5 @@
 #!/bin/bash
+sudo yum install -y vim man git wget zip unzip chronyd
+sudo systemctl enable chronyd
+sudo systemctl start chronyd
 sudo yum update
-sudo yum install vim
-sudo yum install man
-sudo yum install git
-sudo yum install wget
-sudo yum install ntp
-sudo yum install zip
-sudo yum install unzip
-
