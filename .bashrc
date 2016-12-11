@@ -9,14 +9,6 @@ export EDITOR="vim"
 export HISTSIZE=50000
 export HISTTIMEFORMAT="%y/%m/%d %T  "
 
-# paste this to ~/.bashrc
-<< __COMMENT_OUT__
-file=$HOME"/redhat_setup/.bashrc"
-if [ -f $file ]; then
-	. $file
-fi
-__COMMENT_OUT__
-
 function superedit() {
     if [ -z "$1" ]; then
         echo "needs target path"
