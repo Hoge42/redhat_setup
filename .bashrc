@@ -27,3 +27,13 @@ function superdiff() {
     fi
     sudo diff -u $1.org $1
 }
+
+git_branch() {
+	GREEN="$(tput setf 2)"
+	RESET="$(tput sgr0)"
+	CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
+	if [ ! -z "$CURRENT_BRANCH" ]; then
+		echo "${GREEN}($CURRENT_BRANCH)${RESET} "
+	fi
+}
+export PS1='$(git_branch)'$PS1
