@@ -1,0 +1,19 @@
+less
+ -N 行番号を表示
+ -M 現在の表示位置を表示
+ -S 幅が足りないときに折り返さない
+ -R ANSI Color Escape Sequenceを色を付けて表示する
+
+vim
+ -R 読込専用で開く
+
+diff
+ -y, --side-by-side 2列に並べて比較表示
+ --suppress-common-lines 共通の行を表示しない
+
+wc
+ -l 行数を表示
+ -w 単語数を表示
+
+ls -1 | wc -l
+ ディレクトリ内のファイル数を表示
