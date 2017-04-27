@@ -3,9 +3,12 @@ less
  -M 現在の表示位置を表示
  -S 幅が足りないときに折り返さない
  -R ANSI Color Escape Sequenceを色を付けて表示する
+ -X less終了後にターミナルをクリアしない
+ -F ファイルが短い場合にcatと同じ挙動をする
 
 vim
  -R 読込専用で開く
+ -p タブで開く
 
 diff
  -y, --side-by-side 2列に並べて比較表示
@@ -15,5 +18,37 @@ wc
  -l 行数を表示
  -w 単語数を表示
 
+ps
+ a 全ユーザーのプロセスを表示
+ u 実行ユーザー名を表示
+ x ttyでないプロセスを表示
+ f プロセスツリーを表示
+
+watch
+ -n <interval> watchの間隔を設定
+
+grep
+ -r 再帰的に検索する
+
+find
+ -name ファイル名で検索する
+
+cd
+ -P シンボリックリンクの参照先に移動する
+
+rm
+ -r ディレクトリを再帰的に消す
+ -i 消す前に確認する
+ -I 3つ以上消すときに1回だけ確認する
+ -f 確認せず強制的に消す
+
+
+----- 使用例 -----
 ls -1 | wc -l
  ディレクトリ内のファイル数を表示
+
+tail -f <file name> | grep --line-buffered <pattern>
+ tailしながらgrepする
+
+echo -e "\e[31mHOGE" | less -R
+ ANSI Escapeを色付き表示する
