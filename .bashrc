@@ -36,4 +36,4 @@ git_branch() {
 		echo "${GREEN}($CURRENT_BRANCH)${RESET}"
 	fi
 }
-export PS1='$(git_branch)'$PS1
+#export PS1='$(git_branch)'$PS1
