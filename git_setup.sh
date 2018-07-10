@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 git config --global user.name "hoge"
 git config --global user.email hoge@example.com
 git config --global color.ui true

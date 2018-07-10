@@ -1,7 +1,8 @@
+#!/usr/bin/env bash
 cat << 'EOS' >> $HOME/.bashrc
 file=$HOME"/redhat_setup/.bashrc"
 if [ -f $file ]; then
-	. $file
+    . $file
 fi
 EOS
 

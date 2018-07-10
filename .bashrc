@@ -29,11 +29,11 @@ function superdiff() {
 }
 
 git_branch() {
-	GREEN="$(tput setf 2)"
-	RESET="$(tput sgr0)"
-	CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
-	if [ ! -z "$CURRENT_BRANCH" ]; then
-		echo "${GREEN}($CURRENT_BRANCH)${RESET}"
-	fi
+    GREEN="$(tput setf 2)"
+    RESET="$(tput sgr0)"
+    CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
+    if [ ! -z "$CURRENT_BRANCH" ]; then
+        echo "${GREEN}($CURRENT_BRANCH)${RESET}"
+    fi
 }
 #export PS1='$(git_branch)'$PS1
